@@ -29,13 +29,16 @@ jobs:
           name: Push to Artifactory
           command: |
                ./jfrog config add arti-server --artifactory-url http://ec2-54-90-193-187.compute-1.amazonaws.com:8082/ui/repos/tree/General/libs-snapshot-local --user admin --password Admin@2022 --interactive=false
-               ./jfrog rt u http://ec2-54-90-193-187.compute-1.amazonaws.com:8082/ui/repos/tree/General/libs-snapshot-local --build-name=$CIRCLE_JOB --build-number=$CIRCLE_BUILD_NUM
+               ./jfrog rt u libs-snapshot-local/com/heroku/sample/embeddedTomcatSample/1.0-SNAPSHOT/embeddedTomcatSample-1.0-20220629.081333-1.jar --build-number=$CIRCLE_BUILD_NUM --build-name=embeddedTomcatSample-1.0-20220629.081333-1.jar --url=http://ec2-54-90-193-187.compute-1.amazonaws.com:8082/ --user=admin --password=Admin@2022
+              #./jfrog rt u http://ec2-54-90-193-187.compute-1.amazonaws.com:8082/ui/repos/tree/General/libs-snapshot-local --build-name=$CIRCLE_JOB --build-number=$CIRCLE_BUILD_NUM
               #./jfrog config add artifactory-server --artifactory-url $ARTIFACTORY_URL --user $ARTIFACTORY_USER --apikey $ARTIFACTORY_APIKEY --interactive=false
               #./jfrog config add artifactory-server --artifactory-url="$ARTIFACTORY_URL" --user="$ARTIFACTORY_USER" --password="$ARTIFACTORY_PASSWORD" --interactive=false
               #./jfrog rt ping
               #./jfrog rt u --url= http://ec2-54-90-193-187.compute-1.amazonaws.com:8082/artifactory/libs-snapshot-local/ --user=admin --password=Admin@2022 --build-number=$CIRCLE_BUILD_NUM --build-name=$CIRCLE_JOB
               #./jfrog rt bce <name_you_give_to_build> $CIRCLE_BUILD_NUM
               #./jfrog rt bp <name_you_give_to_build> $CIRCLE_BUILD_NUM
+              
+              
 workflows:
   sample: # This is the name of the workflow, feel free to change it to better match your workflow.
     # Inside the workflow, you define the jobs you want to run.
