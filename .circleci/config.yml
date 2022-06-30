@@ -33,7 +33,8 @@ jobs:
           command: |
                ./jfrog config add artifactory-server --artifactory-url="http://ec2-54-90-193-187.compute-1.amazonaws.com:8082/ui/repos/tree/General/libs-snapshot-local"
                ./jfrog rt ping
-               ./jfrog rt u libs-snapshot-local/com/heroku/sample/embeddedTomcatSample/1.0-SNAPSHOT/embeddedTomcatSample-1.0-20220629.081333-1.jar libs-snapshot
+               cd ubuntu@ec2-54-90-193-187.compute-1.amazonaws.com
+               ls -l
               #./jfrog rt dl --url http://ec2-54-90-193-187.compute-1.amazonaws.com:8082/artifactory/libs-snapshot-local/com/heroku/sample/embeddedTomcatSample/1.0-SNAPSHOT/embeddedTomcatSample-1.0-20220629.081333-1.jar --user admin --password Admin@2022 /home/ubuntu/jfrog --force
               #./jfrog rt dl --url http://ec2-54-90-193-187.compute-1.amazonaws.com:8082/artifactory/libs-snapshot-local/com/heroku/sample/embeddedTomcatSample/1.0-SNAPSHOT/embeddedTomcatSample-1.0-20220629.081333-1.jar --user admin --password Admin@2022 /home/ubuntu/jfrog
               #./jfrog rt u --spec=embeddedTomcatSample-1.0-20220629.081333-1.jar --url http://ec2-54-90-193-187.compute-1.amazonaws.com:8082/artifactory/libs-release-local/
