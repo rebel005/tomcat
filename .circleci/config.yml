@@ -36,6 +36,7 @@ jobs:
                ./jfrog rt ping
                cd /home/circleci/project/target/
                ls -lrt
+               chmod +x embeddedTomcatSample.jar
                #./jfrog rt u embeddedTomcatSample.jar libs-snapshot
               #./jfrog rt dl --artifactory--url http://ec2-54-90-193-187.compute-1.amazonaws.com:8082/artifactory/libs-snapshot-local/com/heroku/sample/embeddedTomcatSample/1.0-SNAPSHOT/embeddedTomcatSample-1.0-20220629.081333-1.jar --user jfrog --password Admin@2022
               #./jfrog rt dl --url http://ec2-54-90-193-187.compute-1.amazonaws.com:8082/artifactory/libs-snapshot-local/com/heroku/sample/embeddedTomcatSample/1.0-SNAPSHOT/embeddedTomcatSample-1.0-20220629.081333-1.jar --user admin --password Admin@2022 /home/ubuntu/jfrog
