@@ -29,7 +29,7 @@ jobs:
           name: Push to Artifactory
           command: |
                ./jfrog config add arti-server --artifactory-url http://ec2-54-90-193-187.compute-1.amazonaws.com:8082/ui/repos/tree/General/libs-snapshot-local --user admin --password Admin@2022 --interactive=false
-               ./jfrog rt u embeddedTomcatSample-1.0-SNAPSHOT.jar libs-snapshot
+               ./jfrog rt u embeddedTomcatSample-1.0-SNAPSHOT.jar libs-snapshot --user admin --password Admin@2022
               #./jfrog rt dl --url http://ec2-54-90-193-187.compute-1.amazonaws.com:8082/artifactory/libs-snapshot-local/com/heroku/sample/embeddedTomcatSample/1.0-SNAPSHOT/embeddedTomcatSample-1.0-20220629.081333-1.jar --user admin --password Admin@2022 /home/ubuntu/jfrog --force
               #./jfrog rt dl --url http://ec2-54-90-193-187.compute-1.amazonaws.com:8082/artifactory/libs-snapshot-local/com/heroku/sample/embeddedTomcatSample/1.0-SNAPSHOT/embeddedTomcatSample-1.0-20220629.081333-1.jar --user admin --password Admin@2022 /home/ubuntu/jfrog
               #./jfrog rt u --spec=embeddedTomcatSample-1.0-20220629.081333-1.jar --url http://ec2-54-90-193-187.compute-1.amazonaws.com:8082/artifactory/libs-release-local/
